@@ -36,7 +36,7 @@ class GlassContent extends StatelessWidget {
                     .copyWith(color: Colors.white),
               ),
               const Text(
-                "Robbie \nRutherford",
+                "Solution \nSolution",
                 style: TextStyle(
                   fontSize: 100,
                   fontWeight: FontWeight.bold,
@@ -45,7 +45,7 @@ class GlassContent extends StatelessWidget {
                 ),
               ),
               Text(
-                "Creative Design Director",
+                "Solution 1",
                 style: Theme.of(context)
                     .textTheme
                     .headlineSmall!

@@ -64,22 +64,22 @@ class _MenuState extends State<Menu> {
                 style: const TextStyle(fontSize: 20, color: kTextColor),
               ),
               // Hover
-              AnimatedPositioned(
-                duration: const Duration(milliseconds: 200),
-                left: 0,
-                right: 0,
-                bottom:
-                    selectedIndex != index && hoverIndex == index ? -20 : -32,
-                child: Image.asset("assets/images/jpg.peg"),
-              ),
+             // AnimatedPositioned(
+             //   duration: const Duration(milliseconds: 200),
+              //  left: 0,
+              //  right: 0,
+              //  bottom:
+              //      selectedIndex != index && hoverIndex == index ? -20 : -32,
+              //  child: Image.asset("assets/images/jpg.peg"),
+             // ),
               // Select
-              AnimatedPositioned(
-                duration: const Duration(milliseconds: 200),
-                left: 0,
-                right: 0,
-                bottom: selectedIndex == index ? -2 : -32,
-                child: Image.asset("assets/images/ocean.jpg"),
-              ),
+             // AnimatedPositioned(
+             //   duration: const Duration(milliseconds: 200),
+             //   left: 0,
+              //  right: 0,
+              //  bottom: selectedIndex == index ? -2 : -32,
+              //  child: Image.asset("assets/images/ocean.jpg"),
+             // ),
             ],
           ),
         ),

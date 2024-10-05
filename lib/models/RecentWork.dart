@@ -13,26 +13,26 @@ class RecentWork {
 List<RecentWork> recentWorks = [
   RecentWork(
     id: 1,
-    title: "New & Fresh Looking Portfolio indeed at the end",
-    category: "Graphic Design",
+    title: "Our Solutions",
+    category: "SOLUTION 1",
     image: "assets/images/ocean.jpg",
   ),
   RecentWork(
     id: 2,
     title: "New & Fresh Looking Portfolio indeed at the end",
-    category: "Graphic Design",
+    category: "Solution 2",
     image: "assets/images/ocean.jpg",
   ),
   RecentWork(
     id: 3,
-    title: "New & Fresh Looking Portfolio indeed at the end",
-    category: "Graphic Design",
+    title: "Our solution",
+    category: "Solution 3",
     image: "assets/images/ocean.jpg",
   ),
   RecentWork(
     id: 4,
-    title: "New & Fresh Looking Portfolio indeed at the end",
-    category: "Graphic Design",
+    title: "Our Solution",
+    category: "Solution 4",
     image: "assets/images/ocean.jpg",
   ),
 ];

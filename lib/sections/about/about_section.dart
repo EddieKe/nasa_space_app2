@@ -42,13 +42,13 @@ class AboutSection extends StatelessWidget {
             children: [
               MyOutlineButton(
                 imageSrc: "assets/images/ocean.jpg",
-                text: "Hire Me!",
+                text: "View the Charts!",
                 press: () {},
               ),
               const SizedBox(width: kDefaultPadding * 1.5),
               DefaultButton(
                 imageSrc: "assets/images/ocean.jpg",
-                text: "Download CV",
+                text: "Download Our Report ",
                 press: () {},
               ),
             ],

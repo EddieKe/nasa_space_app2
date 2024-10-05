@@ -17,7 +17,7 @@ class FeedbackSection extends StatelessWidget {
         children: [
           const SectionTitle(
             title: "Feedback Received",
-            subTitle: "Client’s testimonials that inspired me a lot",
+            subTitle: "Stories That Inspired us",
             color: Color(0xFF00B1FF),
           ),
           const SizedBox(height: kDefaultPadding),

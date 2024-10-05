@@ -20,7 +20,15 @@ class AboutTextWithSign extends StatelessWidget {
               .copyWith(fontWeight: FontWeight.bold, color: Colors.black),
         ),
         SizedBox(height: kDefaultPadding * 2),
-        Image.asset("assets/images/sign.png")
+        
+        // Wrapping the image with SizedBox and BoxFit to minimize space usage
+        SizedBox(
+          width: 100, // Adjust width to control the size of the image
+          child: Image.asset(
+            "assets/images/ocean.jpg",
+            fit: BoxFit.contain, // Contain ensures it fits within the box without overflowing
+          ),
+        ),
       ],
     );
   }

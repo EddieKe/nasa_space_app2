@@ -1,13 +1,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:nasa_space_app2/constants.dart';
-import 'package:nasa_space_app2/sections/topSection/components/logo_blur.dart';
 import 'package:nasa_space_app2/sections/topSection/components/menu.dart';
-import 'package:nasa_space_app2/sections/topSection/person_pic.dart';
+
 
 
 
 class TopSection extends StatelessWidget {
+  const TopSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,14 +26,8 @@ class TopSection extends StatelessWidget {
         width: 1200,
         child:  Stack(
           children: [
-           const LogoAndBlurBox(size: const Size(23,23)),
-           const Positioned(
-             bottom: 0,
-             right: 0,
-             child: PersonPic(),
-           ),
            Positioned(
-             bottom: 0,
+             top: 0,
              child: Menu(),
            ),
           ],

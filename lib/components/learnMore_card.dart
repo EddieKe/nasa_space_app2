@@ -37,19 +37,19 @@ class LearnMoreCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Starting New Project?",
+                  "Carbon (iv) Oxide Emissions",
                   style: TextStyle(fontSize: 42, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: kDefaultPadding / 2),
                 Text(
-                  "Get an estimate for the new project",
+                  "Carbon (iv) Oxide Emissions",
                   style: TextStyle(fontWeight: FontWeight.w200),
                 )
               ],
             ),
           ),
           DefaultButton(
-            text: "Hire Me!",
+            text: "Learn More!",
             imageSrc: "assets/images/ocean.jpg",
             press: () {},
           )

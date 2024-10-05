@@ -61,19 +61,19 @@ class ContactBox extends StatelessWidget {
               SocalCard(
                 color: const Color(0xFFD9FFFC),
                 iconSrc: "assets/images/ocean.jpg",
-                name: 'TheFlutterWay',
+                name: 'Carbon (iv)oxide',
                 press: () {},
               ),
               SocalCard(
                 color: const Color(0xFFE4FFC7),
                 iconSrc: "assets/images/ocean.jpg",
-                name: 'TheFlutterWay',
+                name: 'Carbon (iv)oxide',
                 press: () {},
               ),
               SocalCard(
                 color: const Color(0xFFE8F0F9),
                 iconSrc: "assets/images/ocean.jpg",
-                name: 'TheFlutterWay',
+                name: 'Carbon (iv)oxide',
                 press: () {},
               ),
             ],
@@ -153,7 +153,7 @@ class ContactForm extends StatelessWidget {
           Center(
             child: FittedBox(
               child: DefaultButton(
-                imageSrc: "assets/images/contact_icon.png",
+                imageSrc: "assets/images/ocean.jpg",
                 text: "Contact US!",
                 press: () {},
               ),
