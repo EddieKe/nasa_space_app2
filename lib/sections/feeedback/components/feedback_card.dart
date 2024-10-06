@@ -18,6 +18,7 @@ class FeedbackCard extends StatefulWidget {
 class _FeedbackCardState extends State<FeedbackCard> {
   Duration duration = const Duration(milliseconds: 200);
   bool isHover = false;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -68,9 +69,10 @@ class _FeedbackCardState extends State<FeedbackCard> {
               ),
             ),
             const SizedBox(height: kDefaultPadding * 2),
-            const Text(
-              "Carbon (iv) Oxide",
-              style: TextStyle(fontWeight: FontWeight.bold),
+           
+            Text(
+              feedbacks[widget.index].name,
+              style: const TextStyle(fontWeight: FontWeight.bold),
             )
           ],
         ),

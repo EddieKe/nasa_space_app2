@@ -16,7 +16,7 @@ class FeedbackSection extends StatelessWidget {
       child: Column(
         children: [
           const SectionTitle(
-            title: "Feedback Received",
+            title: "What they say about us",
             subTitle: "Stories That Inspired us",
             color: Color(0xFF00B1FF),
           ),
