@@ -5,9 +5,9 @@ import '../../../constants.dart';
 
 class ServiceCard extends StatefulWidget {
   const ServiceCard({
-    Key? key,
+    super.key,
     required this.index,
-  }) : super(key: key);
+  });
 
   final int index;
 

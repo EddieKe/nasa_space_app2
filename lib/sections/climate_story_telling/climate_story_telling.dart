@@ -31,7 +31,7 @@ class ClimateStorytelling extends StatelessWidget {
               // Slide 1: Oceans
               _buildCarouselItem(
                 context,
-                'assets/images/ocean.jpg',
+                'assets/images/oceanacidifications.jpg',
                 'Ocean Acidification',
                 'As CO₂ levels increase, oceans absorb much of it, causing acidification that threatens marine life. Coral reefs, fish populations, and coastal communities are at risk as rising temperatures and acidity levels disrupt ecosystems. Fisheries and livelihoods dependent on ocean biodiversity are deeply affected.',
                 'Learn More About Oceans',
@@ -43,7 +43,7 @@ class ClimateStorytelling extends StatelessWidget {
               // Slide 2: Agriculture
               _buildCarouselItem(
                 context,
-                'assets/images/ocean.jpg',
+                'assets/images/agri.jpg',
                 'Agriculture and Food Security',
                 'Rising CO₂ and climate change lead to unpredictable weather patterns like droughts, floods, and storms, which impact agriculture. Farmers, especially in vulnerable regions, are experiencing decreased crop yields, threatening food security and driving up prices globally.',
                 'Learn More About Agriculture',
@@ -55,7 +55,7 @@ class ClimateStorytelling extends StatelessWidget {
               // Slide 3: Community
               _buildCarouselItem(
                 context,
-                'assets/images/ocean.jpg',
+                'assets/images/risingsealevels.jpg',
                 'Rising Sea Levels',
                 'Communities around the world, especially in coastal and island regions, are witnessing the impact of rising sea levels due to melting ice caps and glaciers. Homes and infrastructure are being lost, forcing mass migration and destabilizing economies.',
                 'Learn More About Communities',

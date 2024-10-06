@@ -13,25 +13,14 @@ List<Service> services = [
   Service(
     id: 1,
     title: "Solution 3",
-    image: "assets/images/ocean.jpg",
+    image: "assets/images/solutions3.jpg",
     color: Color(0xFFD9FFFC),
   ),
   Service(
     id: 2,
     title: "Solution 2",
-    image: "assets/images/ocean.jpg",
+    image: "assets/images/solution1.jpg",
     color: Color(0xFFE4FFC7),
   ),
-  Service(
-    id: 3,
-    title: "Soulution 1",
-    image: "assets/images/ocean.jpg",
-    color: Color(0xFFFFF3DD),
-  ),
-  Service(
-    id: 4,
-    title: "Solution",
-    image: "assets/images/ocean.jpg",
-    color: Color(0xFFFFE0E0),
-  ),
+
 ];

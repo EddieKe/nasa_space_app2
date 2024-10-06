@@ -8,7 +8,7 @@ import 'package:nasa_space_app2/sections/feeedback/feedback_section.dart';
 import 'package:nasa_space_app2/sections/footer/footer_section.dart';
 import 'package:nasa_space_app2/sections/topSection/components/top_section.dart';
 
-import 'package:nasa_space_app2/sections/service/service_section.dart';
+
 
 
 class HomeScreen extends StatelessWidget {
@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
             const TopSection(),
             const SizedBox(height: kDefaultPadding * 2),
             const AboutSection(),
-            const ServiceSection(),
+            //const ServiceSection(),
                    ChartSection(),
              const ClimateStorytelling(),
         //    RecentWorkSection(),

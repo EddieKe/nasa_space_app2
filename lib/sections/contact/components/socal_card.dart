@@ -4,12 +4,12 @@ import '../../../constants.dart';
 
 class SocalCard extends StatefulWidget {
   const SocalCard({
-    Key? key,
+    super.key,
     required this.iconSrc,
     required this.name,
     required this.color,
     required this.press,
-  }) : super(key: key);
+  });
 
   final String iconSrc, name;
   final Color color;

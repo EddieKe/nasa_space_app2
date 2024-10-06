@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nasa_space_app2/components/default_button.dart';
-import 'package:nasa_space_app2/components/my_outline_button.dart';
 import 'package:nasa_space_app2/constants.dart';
 
 import 'components/about_section_text.dart';
@@ -24,14 +23,14 @@ class AboutSection extends StatelessWidget {
               Expanded(
                 child: AboutSectionText(
                   text:
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore mag aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                      "Once a natural component of Earth’s atmosphere, carbon dioxide (CO₂) has transformed into a key player in the climate crisis. Over the years, industrialization and human activities have dramatically increased CO₂ emissions, tipping the balance of our planet. This once-trace gas now significantly contributes to global warming, affecting weather patterns and sea levels, and threatening our very existence.",
                 ),
               ),
               ExperienceCard(numOfExp: "08"),
               Expanded(
                 child: AboutSectionText(
                   text:
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore mag aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                      "As we confront this urgent reality, understanding CO₂’s evolution is essential for envisioning a sustainable future. Each year, new data highlights the rising temperatures and shifting ecosystems driven by increased emissions. Our project aims to illuminate this journey, empowering individuals to engage with the story of CO₂ and take action toward a healthier planet. The time to act is now, and every step we take counts.",
                 ),
               ),
             ],
@@ -40,17 +39,14 @@ class AboutSection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              MyOutlineButton(
-                imageSrc: "assets/images/ocean.jpg",
-                text: "View the Charts!",
-                press: () {},
+              Expanded(
+                child: DefaultButton(
+                  imageSrc: "assets/images/ocean2.jpg",
+                  text: "View the Charts!",
+                  press: () {},
+                ),
               ),
               const SizedBox(width: kDefaultPadding * 1.5),
-              DefaultButton(
-                imageSrc: "assets/images/ocean.jpg",
-                text: "Download Our Report ",
-                press: () {},
-              ),
             ],
           ),
         ],

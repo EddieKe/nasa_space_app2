@@ -7,6 +7,8 @@ import 'package:nasa_space_app2/constants.dart';
 import 'components/socal_card.dart';
 
 class ContactSection extends StatelessWidget {
+  const ContactSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,7 +19,7 @@ class ContactSection extends StatelessWidget {
         color: Color(0xFFE8F0F9),
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage("assets/images/ocean.jpg"),
+          image: AssetImage("assets/images/ocean 3.jpg"),
         ),
       ),
       child: const Column(
@@ -60,19 +62,19 @@ class ContactBox extends StatelessWidget {
             children: [
               SocalCard(
                 color: const Color(0xFFD9FFFC),
-                iconSrc: "assets/images/ocean.jpg",
+                iconSrc: "assets/images/x.PNG",
                 name: 'X',
                 press: () {},
               ),
               SocalCard(
                 color: const Color(0xFFE4FFC7),
-                iconSrc: "assets/images/ocean.jpg",
+                iconSrc: "assets/images/linkedIn.PNG",
                 name: 'LinkedIn',
                 press: () {},
               ),
               SocalCard(
                 color: const Color(0xFFE8F0F9),
-                iconSrc: "assets/images/ocean.jpg",
+                iconSrc: "assets/images/instagram.PNG",
                 name: 'Instagram',
                 press: () {},
               ),
@@ -88,8 +90,8 @@ class ContactBox extends StatelessWidget {
 
 class ContactForm extends StatelessWidget {
   const ContactForm({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -118,26 +120,7 @@ class ContactForm extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            width: 470,
-            child: TextFormField(
-              onChanged: (value) {},
-              decoration: const InputDecoration(
-                labelText: "Project Type",
-                hintText: "Select Project Type",
-              ),
-            ),
-          ),
-          SizedBox(
-            width: 470,
-            child: TextFormField(
-              onChanged: (value) {},
-              decoration: const InputDecoration(
-                labelText: "Project Budget",
-                hintText: "Select Project Budget",
-              ),
-            ),
-          ),
+        
           SizedBox(
             // height: 300,
             // TextField by default cover the height, i tryed to fix this problem but i cant
@@ -153,7 +136,7 @@ class ContactForm extends StatelessWidget {
           Center(
             child: FittedBox(
               child: DefaultButton(
-                imageSrc: "assets/images/ocean.jpg",
+                imageSrc: "assets/images/ocean2.jpg",
                 text: "Contact US!",
                 press: () {},
               ),

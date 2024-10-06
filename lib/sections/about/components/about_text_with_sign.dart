@@ -12,21 +12,36 @@ class AboutTextWithSign extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "Problem Statement",
-          style: Theme.of(context)
-              .textTheme
-              .displayMedium!
-              .copyWith(fontWeight: FontWeight.bold, color: Colors.black),
+        Padding(
+          padding: const EdgeInsets.all(20),
+          child: Text(
+            "Our \nStory",
+            style: Theme.of(context)
+                .textTheme
+                .displayMedium!
+                .copyWith(fontWeight: FontWeight.bold, color: Colors.black),
+          ),
         ),
         const SizedBox(height: kDefaultPadding * 2),
-        
+
         // Wrapping the image with SizedBox and BoxFit to minimize space usage
-        SizedBox(
-          width: 100, // Adjust width to control the size of the image
-          child: Image.asset(
-            "assets/images/ocean.jpg",
-            fit: BoxFit.contain, // Contain ensures it fits within the box without overflowing
+        DecoratedBox(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: SizedBox(
+            width: 200,
+            height: 200, // Adjust width to control the size of the image
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20)
+              ),
+              child: Image.asset(
+                "assets/images/ocean2.jpg",
+                fit: BoxFit
+                    .contain, // Contain ensures it fits within the box without overflowing
+              ),
+            ),
           ),
         ),
       ],
