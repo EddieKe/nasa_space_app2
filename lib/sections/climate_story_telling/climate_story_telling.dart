@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class ClimateStorytelling extends StatelessWidget {
+  const ClimateStorytelling({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,71 +19,130 @@ class ClimateStorytelling extends StatelessWidget {
           ),
           const SizedBox(height: 20),
 
-          Row(
-            children: [
-              // Left Section: Text Content
-              Expanded(
-                flex: 2,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Purpose: To connect data with human experiences through compelling stories that demonstrate the real-world impacts of CO₂ emissions.\n\n'
-                      'Content: Explore real-life case studies and narratives that bring to light the effects of rising CO₂ levels on essential ecosystems. '
-                      'These stories dive into the impact of climate change on oceans, where increased CO₂ is driving acidification, threatening marine life, and affecting coastal communities dependent on fisheries.\n\n'
-                      'Learn how agricultural sectors are facing challenges from unpredictable weather patterns and droughts, all exacerbated by the rise in greenhouse gases, leading to decreased crop yields and food insecurity in vulnerable regions.\n\n'
-                      'Witness how entire communities are being displaced due to rising sea levels, impacting homes, infrastructure, and livelihoods, especially in coastal and island nations.\n\n'
-                      'Together, these stories emphasize the urgency of addressing CO₂ emissions to safeguard the planet, biodiversity, and human well-being.',
-                      style: TextStyle(fontSize: 16, color: Colors.black87),
-                    ),
-                    const SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: () {
-                        // Add navigation to learn more page
-                      },
-                      child: const Text('Learn More'),
-                    ),
-                  ],
-                ),
+          // Carousel Section with separate content for each slide
+          CarouselSlider(
+            options: CarouselOptions(
+              height: 400,
+              autoPlay: true,
+              enlargeCenterPage: true,
+            ),
+            items: [
+              // Slide 1: Oceans
+              _buildCarouselItem(
+                context,
+                'assets/images/ocean.jpg',
+                'Ocean Acidification',
+                'As CO₂ levels increase, oceans absorb much of it, causing acidification that threatens marine life. Coral reefs, fish populations, and coastal communities are at risk as rising temperatures and acidity levels disrupt ecosystems. Fisheries and livelihoods dependent on ocean biodiversity are deeply affected.',
+                'Learn More About Oceans',
+                () {
+                  // Action for Learn More on Ocean Slide
+                },
               ),
-              
-              const SizedBox(width: 20),
 
-              // Right Section: Image Carousel
-              Expanded(
-                flex: 3,
-                child: CarouselSlider(
-                  options: CarouselOptions(
-                    height: 400,
-                    autoPlay: true,
-                    enlargeCenterPage: true,
-                  ),
-                  items: [
-                    'assets/images/ocean_story.jpg',
-                    'assets/images/agriculture_story.jpg',
-                    'assets/images/community_story.jpg'
-                  ].map((imagePath) {
-                    return Builder(
-                      builder: (BuildContext context) {
-                        return Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage(imagePath),
-                            ),
-                          ),
-                        );
-                      },
-                    );
-                  }).toList(),
-                ),
+              // Slide 2: Agriculture
+              _buildCarouselItem(
+                context,
+                'assets/images/ocean.jpg',
+                'Agriculture and Food Security',
+                'Rising CO₂ and climate change lead to unpredictable weather patterns like droughts, floods, and storms, which impact agriculture. Farmers, especially in vulnerable regions, are experiencing decreased crop yields, threatening food security and driving up prices globally.',
+                'Learn More About Agriculture',
+                () {
+                  // Action for Learn More on Agriculture Slide
+                },
+              ),
+
+              // Slide 3: Community
+              _buildCarouselItem(
+                context,
+                'assets/images/ocean.jpg',
+                'Rising Sea Levels',
+                'Communities around the world, especially in coastal and island regions, are witnessing the impact of rising sea levels due to melting ice caps and glaciers. Homes and infrastructure are being lost, forcing mass migration and destabilizing economies.',
+                'Learn More About Communities',
+                () {
+                  // Action for Learn More on Community Slide
+                },
               ),
             ],
           ),
         ],
       ),
+    );
+  }
+
+  // Helper method to create a carousel item with an image, text, and button
+  Widget _buildCarouselItem(
+    BuildContext context,
+    String imagePath,
+    String title,
+    String description,
+    String buttonText,
+    VoidCallback onPressed,
+  ) {
+    return Builder(
+      builder: (BuildContext context) {
+        return Container(
+          margin: const EdgeInsets.symmetric(horizontal: 10.0),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 5,
+                blurRadius: 7,
+                offset: const Offset(0, 3),
+              ),
+            ],
+          ),
+          child: Row(
+            children: [
+              // Image Section
+              Expanded(
+                flex: 2,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset(
+                    imagePath,
+                    fit: BoxFit.cover,
+                    height: double.infinity,
+                  ),
+                ),
+              ),
+              
+              const SizedBox(width: 16),
+
+              // Content Section
+              Expanded(
+                flex: 3,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        title,
+                        style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                            fontWeight: FontWeight.bold, color: Colors.black87),
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        description,
+                        style: const TextStyle(fontSize: 16, color: Colors.black87),
+                      ),
+                      const SizedBox(height: 20),
+                      ElevatedButton(
+                        onPressed: onPressed,
+                        child: Text(buttonText),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
