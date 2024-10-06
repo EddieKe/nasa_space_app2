@@ -15,21 +15,21 @@ List<Feedback> feedbacks = [
     name: "Ronald Thompson",
     review: review,
     userPic: "assets/images/ocean.jpg",
-    color: Color(0xFFFFF3DD),
+    color: const Color(0xFFFFF3DD),
   ),
   Feedback(
     id: 2,
     name: "Ronald Thompson",
     review: review,
     userPic: "assets/images/ocean.jpg",
-    color: Color(0xFFD9FFFC),
+    color: const Color(0xFFD9FFFC),
   ),
   Feedback(
     id: 3,
     name: "Ronald Thompson",
     review: review,
     userPic: "assets/images/ocean.jpg",
-    color: Color(0xFFFFE0E0),
+    color: const Color(0xFFFFE0E0),
   ),
 ];
 

@@ -13,13 +13,13 @@ class AboutTextWithSign extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "About \nOur story",
+          "Problem Statement",
           style: Theme.of(context)
               .textTheme
               .displayMedium!
               .copyWith(fontWeight: FontWeight.bold, color: Colors.black),
         ),
-        SizedBox(height: kDefaultPadding * 2),
+        const SizedBox(height: kDefaultPadding * 2),
         
         // Wrapping the image with SizedBox and BoxFit to minimize space usage
         SizedBox(
