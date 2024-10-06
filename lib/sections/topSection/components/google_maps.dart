@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:geolocator/geolocator.dart';
 
 class GoogleMapScreen extends StatefulWidget {
   const GoogleMapScreen({super.key});
@@ -10,66 +11,53 @@ class GoogleMapScreen extends StatefulWidget {
 }
 
 class _GoogleMapScreenState extends State<GoogleMapScreen> {
-  GoogleMapController? mapController; // Make the controller nullable
+  List _emissionsData = [];
+  Set<Marker> _markers = {};
+
+  Future<void> _fetchEmissionsData() async {
+    try {
+      final response = await http.get(Uri.parse('http://127.0.0.1:5000/api/emissions')); // Use your local IP
+      if (response.statusCode == 200) {
+        List data = jsonDecode(response.body);
+        setState(() {
+          _emissionsData = data;
+          _markers = data.map((item) {
+            return Marker(
+              markerId: MarkerId(item['location']),
+              position: LatLng(item['coordinates'][0], item['coordinates'][1]),
+              infoWindow: InfoWindow(
+                title: item['location'],
+                snippet: 'Emissions: ${item['emissions']}',
+              ),
+            );
+          }).toSet();
+        });
+      } else {
+        print('Failed to load emissions data');
+      }
+    } catch (error) {
+      print('Error fetching emissions data: $error');
+    }
+  }
 
   @override
   void initState() {
     super.initState();
-    _getCurrentLocation(); // Fetch location when the widget is initialized
-  }
-
-  // Method to set the controller when the map is created
-  void _onMapCreated(GoogleMapController controller) {
-    mapController = controller;
-    _getCurrentLocation(); // Move the camera to the user's current location
-  }
-
-  Future<void> _getCurrentLocation() async {
-    // Ensure permissions are granted
-    bool serviceEnabled;
-    LocationPermission permission;
-
-    serviceEnabled = await Geolocator.isLocationServiceEnabled();
-    if (!serviceEnabled) {
-      // Location services are not enabled, return early
-      return;
-    }
-
-    permission = await Geolocator.checkPermission();
-    if (permission == LocationPermission.denied) {
-      permission = await Geolocator.requestPermission();
-      if (permission == LocationPermission.deniedForever) {
-        // Permissions are denied forever, handle appropriately
-        return;
-      }
-    }
-
-    Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-
-    if (mapController != null) {
-      // Ensure the controller is initialized before using it
-      mapController!.animateCamera(CameraUpdate.newLatLng(
-        LatLng(position.latitude, position.longitude),
-      ));
-    }
+    _fetchEmissionsData();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            child: GoogleMap(
-              onMapCreated: _onMapCreated,
+      body: _emissionsData.isEmpty
+          ? const Center(child: CircularProgressIndicator())
+          : GoogleMap(
               initialCameraPosition: const CameraPosition(
-                target: LatLng(0, 0), // Default to a neutral position before fetching location
-                zoom: 12,
+                target: LatLng(40.7128, -74.0060), // Default position (New York)
+                zoom: 5,
               ),
+              markers: _markers,
             ),
-          ),
-        ],
-      ),
     );
   }
 }
