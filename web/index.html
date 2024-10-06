@@ -10,9 +10,6 @@
 
     For more details:
     * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
   -->
   <base href="$FLUTTER_BASE_HREF">
 
@@ -29,8 +26,22 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>nasa_space_app2</title>
+  <!-- Google Maps JavaScript API -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJJtqIATSCnOG-jZtXjje8PAL9ONgClaA&callback=initMap">
+  </script>
+
+  <!-- Flutter Manifest -->
   <link rel="manifest" href="manifest.json">
+
+  <!-- Add this for Map Initialization -->
+  <script>
+    function initMap() {
+      console.log('Google Maps API initialized');
+    }
+  </script>
+
+  <title>nasa_space_app2</title>
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>

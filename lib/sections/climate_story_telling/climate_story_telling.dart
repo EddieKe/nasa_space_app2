@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:nasa_space_app2/sections/climate_story_telling/components/default_button_climate.dart';
 
 class ClimateStorytelling extends StatelessWidget {
   const ClimateStorytelling({super.key});
@@ -13,7 +14,7 @@ class ClimateStorytelling extends StatelessWidget {
         children: [
           // Section Title
           Text(
-            'Climate Storytelling: Impact of CO₂ Emissions',
+            'Impact of CO₂ Emissions',
             style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                 fontWeight: FontWeight.bold, color: Colors.black87),
           ),
@@ -131,9 +132,9 @@ class ClimateStorytelling extends StatelessWidget {
                         style: const TextStyle(fontSize: 16, color: Colors.black87),
                       ),
                       const SizedBox(height: 20),
-                      ElevatedButton(
-                        onPressed: onPressed,
-                        child: Text(buttonText),
+                      DefaultButtonClimate(
+                        text: (buttonText),
+                        press: () {  },
                       ),
                     ],
                   ),

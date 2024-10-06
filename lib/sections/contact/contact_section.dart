@@ -61,19 +61,19 @@ class ContactBox extends StatelessWidget {
               SocalCard(
                 color: const Color(0xFFD9FFFC),
                 iconSrc: "assets/images/ocean.jpg",
-                name: 'Carbon (iv)oxide',
+                name: 'X',
                 press: () {},
               ),
               SocalCard(
                 color: const Color(0xFFE4FFC7),
                 iconSrc: "assets/images/ocean.jpg",
-                name: 'Carbon (iv)oxide',
+                name: 'LinkedIn',
                 press: () {},
               ),
               SocalCard(
                 color: const Color(0xFFE8F0F9),
                 iconSrc: "assets/images/ocean.jpg",
-                name: 'Carbon (iv)oxide',
+                name: 'Instagram',
                 press: () {},
               ),
             ],

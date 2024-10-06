@@ -5,6 +5,7 @@ import 'package:nasa_space_app2/sections/chart/chart_section.dart';
 import 'package:nasa_space_app2/sections/climate_story_telling/climate_story_telling.dart';
 import 'package:nasa_space_app2/sections/contact/contact_section.dart';
 import 'package:nasa_space_app2/sections/feeedback/feedback_section.dart';
+import 'package:nasa_space_app2/sections/footer/footer_section.dart';
 import 'package:nasa_space_app2/sections/topSection/components/top_section.dart';
 
 import 'package:nasa_space_app2/sections/service/service_section.dart';
@@ -24,14 +25,15 @@ class HomeScreen extends StatelessWidget {
             const AboutSection(),
             const ServiceSection(),
                    ChartSection(),
-             ClimateStorytelling(),
+             const ClimateStorytelling(),
         //    RecentWorkSection(),
             const FeedbackSection(),
             const SizedBox(height: kDefaultPadding),
             ContactSection(),
-            // SizedBox(
-            //   height: 500,
-            // )
+            const SizedBox(
+              height: 20,
+            ),
+            const FooterSection(),
           ],
         ),
       ),

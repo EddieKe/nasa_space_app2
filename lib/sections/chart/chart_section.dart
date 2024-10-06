@@ -56,17 +56,51 @@ class ChartSection extends StatelessWidget {
                       const FlSpot(6, 1.8),
                     ],
                     isCurved: true,
-                    color: Colors.blue,  // Use `color` instead of `colors`
+                    color: Colors.blue,
                     barWidth: 3,
                     isStrokeCapRound: true,
                     belowBarData: BarAreaData(
                       show: true,
-                      color: Colors.blue.withOpacity(0.3),  // Use `color` instead of `colors`
+                      color: Colors.blue.withOpacity(0.3),
                     ),
                   ),
                 ],
               ),
             ),
+          ),
+          const SizedBox(height: 16), 
+
+          
+          Row(
+            children: [
+              // Image on the left
+              Expanded(
+                child: Container(
+                  height: 400,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: const DecorationImage(
+                      image: AssetImage('assets/images/chart2.jpg'), 
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 16), 
+
+              Expanded(
+                child: Container(
+                  height: 400,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: const DecorationImage(
+                      image: AssetImage('assets/images/chart1.jpg'), // Replace with your image asset
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
