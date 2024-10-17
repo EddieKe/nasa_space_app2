@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const kTextColor = Color(0xFF707070);
+const kTextColor = Color.fromARGB(255, 12, 26, 1);
 const kTextLightColor = Color(0xFF555555);
 
 const kDefaultPadding = 20.0;
@@ -14,7 +14,7 @@ final kDefaultShadow = BoxShadow(
 final kDefaultCardShadow = BoxShadow(
   offset: const Offset(0, 20),
   blurRadius: 50,
-  color: Colors.black.withOpacity(0.1),
+  color: const Color.fromARGB(255, 112, 90, 2).withOpacity(0.1),
 );
 
 // TextField dedign

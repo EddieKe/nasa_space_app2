@@ -17,7 +17,7 @@ class ContactSection extends StatelessWidget {
         color: Color(0xFFE8F0F9),
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage("assets/images/ocean2.jpg"),
+          image: AssetImage("assets/images/ocean4.jpg"),
         ),
       ),
       child: const Column(

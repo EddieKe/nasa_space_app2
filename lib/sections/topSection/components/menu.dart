@@ -27,10 +27,19 @@ class _MenuState extends State<Menu> {
       constraints: const BoxConstraints(maxWidth: 1110),
       height: 100,
       decoration: BoxDecoration(
-        color: Colors.white,
+        
+          gradient: const LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+           colors: [
+              Color.fromARGB(255, 235, 194, 15),
+              Color.fromARGB(255, 109, 94, 4), 
+            ],
+
+          ),
         borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(10),
-          topRight: Radius.circular(10),
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
         ),
         boxShadow: [kDefaultShadow],
       ),
