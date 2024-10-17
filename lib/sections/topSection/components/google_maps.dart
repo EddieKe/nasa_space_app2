@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+// import 'dart:convert';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class GoogleMapScreen extends StatefulWidget {
@@ -14,28 +13,46 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
   List _emissionsData = [];
   Set<Marker> _markers = {};
 
+  // Mock data function
   Future<void> _fetchEmissionsData() async {
     try {
-      final response = await http.get(Uri.parse('http://127.0.0.1:5000/api/emissions')); // Use your local IP
-      if (response.statusCode == 200) {
-        List data = jsonDecode(response.body);
-        setState(() {
-          _emissionsData = data;
-          _markers = data.map((item) {
-            return Marker(
-              markerId: MarkerId(item['location']),
-              position: LatLng(item['coordinates'][0], item['coordinates'][1]),
-              infoWindow: InfoWindow(
-                title: item['location'],
-                snippet: 'Emissions: ${item['emissions']}',
-              ),
-            );
-          }).toSet();
-        });
-      } else {
-        print('Failed to load emissions data');
-      }
+      // Simulating a delay like a network request
+      await Future.delayed(Duration(seconds: 2));
+
+      // Mock emissions data
+      List data = [
+        {
+          "location": "New York",
+          "coordinates": [40.7128, -74.0060],
+          "emissions": "500 tons CO2"
+        },
+        {
+          "location": "Los Angeles",
+          "coordinates": [34.0522, -118.2437],
+          "emissions": "300 tons CO2"
+        },
+        {
+          "location": "Chicago",
+          "coordinates": [41.8781, -87.6298],
+          "emissions": "400 tons CO2"
+        }
+      ];
+
+      setState(() {
+        _emissionsData = data;
+        _markers = data.map((item) {
+          return Marker(
+            markerId: MarkerId(item['location']),
+            position: LatLng(item['coordinates'][0], item['coordinates'][1]),
+            infoWindow: InfoWindow(
+              title: item['location'],
+              snippet: 'Emissions: ${item['emissions']}',
+            ),
+          );
+        }).toSet();
+      });
     } catch (error) {
+      // Detailed error message
       print('Error fetching emissions data: $error');
     }
   }
@@ -43,7 +60,7 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
   @override
   void initState() {
     super.initState();
-    _fetchEmissionsData();
+    _fetchEmissionsData(); // Fetching mock data on initialization
   }
 
   @override

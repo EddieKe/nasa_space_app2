@@ -12,14 +12,12 @@ class ContactSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // this height only for demo
-      // height: 500,
       width: double.infinity,
       decoration: const BoxDecoration(
         color: Color(0xFFE8F0F9),
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage("assets/images/ocean 3.jpg"),
+          image: AssetImage("assets/images/ocean2.jpg"),
         ),
       ),
       child: const Column(

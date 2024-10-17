@@ -21,7 +21,7 @@ class LearnMoreCard extends StatelessWidget {
       child: Row(
         children: [
           Image.asset(
-            "assets/images/ocean.jpg",
+            "assets/images/ocean2.jpg",
             height: 80,
             width: 80,
           ),
@@ -50,7 +50,7 @@ class LearnMoreCard extends StatelessWidget {
           ),
           DefaultButton(
             text: "Learn More!",
-            imageSrc: "assets/images/ocean.jpg",
+            imageSrc: "assets/images/ocean2.jpg",
             press: () {},
           )
         ],

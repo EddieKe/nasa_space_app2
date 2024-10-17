@@ -1,0 +1,13 @@
+[
+    {
+      "location": "New York",
+      "coordinates": [40.7128, -74.0060],
+      "emissions": "500 tons CO2"
+    },
+    {
+      "location": "Los Angeles",
+      "coordinates": [34.0522, -118.2437],
+      "emissions": "300 tons CO2"
+    }
+  ]
+  
