@@ -21,4 +21,4 @@ To clone this project, follow these steps:
 3. Run the following command:
 
    ```bash
-   git clone https://github.com/YourUsername/nasa_space_app2.git
+   git clone https://github.com/EddieKe/nasa_space_app2.git
